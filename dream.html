@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>深海</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fuwaimg.css">
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script> <!-- CreateJSのライブラリー読み込み -->
+  <script src="https://cdn.rawgit.com/ics-creative/ParticleJS/release/1.0.0/libs/particlejs.min.js"></script> <!-- ParticleJSのライブラリー読み込み -->
+  <script src="js/jquery.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/rellax.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <ul>
+            <li><a href="#first">dream</a></li>
+            <li><a href="#link">link</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section id="top"> <!-- id="top"は変えないでください！デザインが崩れます -->
+    <div class="rellax front">
+      <div class="title">
+        <h1>深海のみる夢</h1>
+        <p>お名前を教えてください</p>
+        <form id="dream">
+          <input type="text" name="name1" placeholder="佐藤"> <input type="text" name="name2" placeholder="陽菜">
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+    <div class="rellax base center" data-rellax-speed="6">
+      <canvas width="1400" height="800" id="myCanvas"></canvas>
+    </div>
+    <div class="rellax deep fix-80 only-pc" data-rellax-speed="-2">
+      <div class="right half">
+        <img src="img/fish.png">
+      </div>
+      <div class="left half">
+        <img src="img/fish.png">
+      </div>
+    </div>
+  </section>
+
+  <section id="first"> <!-- id="first"は変えないでください！デザインが崩れます -->
+
+    <a href="#first"><i class="fas fa-angle-down"></i></a>
+    <div class="container">
+      <div class="row">
+        <div class="col-12" class="center">
+          <h2 class="center">Dreams</h2>
+        </div>
+
+        <div class="col-md-6">
+          <h3>ここにジャンルなど</h3>
+          <ul class="novel-1">
+            <li><a href="text.html">小説１</a>
+              <span>説明文です</span></li>
+            <li><a href="text.html">小説２</a>
+              <span>改行すると<br>こんな感じ</span></li>
+            <li><a href="text.html">小説３</a><span>説明をspanタグで囲ってください</span></li>
+          </ul>
+
+          <h3>過去の小説</h3>
+          <p>novel-2クラス指定は説明なし、リストアイテムが複数になると区切り線が勝手に入る仕様です。過去作品などにどうぞ</p>
+          <ul class="novel-2">
+            <li><a href="text.html">過去小説１</a></li>
+            <li><a href="text.html">過去小説２</a></li>
+            <li><a href="text.html">過去小説３</a></li>
+            <li><a href="text.html">過去小説４</a></li>
+            <li><a href="text.html">過去小説５</a></li>
+          </ul>
+        </div> <!-- end col-md-6 -->
+
+        <div class="col-md-6">
+          <h3>短編集</h3>
+          <p>２カラムにもできます。liにclass="new"を与えるとnewマークがつきます</p>
+          <ul class="novel-1">
+            <li><a href="text.html">短編１</a>
+              <span>小説です！</span></li>
+            <li><a href="text.html">短編２</a>
+              <span>短編です！</span></li>
+            <li class="new"><a href="text.html">短編３</a><span>自信作です！！</span></li>
+          </ul>
+        </div> <!-- end col-md-6 -->
+
+        </div>
+      </div>
+  </section>
+
+  <section id="link">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6">
+          <h3>このサイトについて</h3>
+          <p>こんなサイトです。こんなサイトです。</p>
+          <p><img src="img/bn-l.jpg"></p>
+
+          <h4>管理人</h4>
+          <p>こんな名前です。</p>
+          <ul class="sns-list">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-6">
+          <h3>リンク集</h3>
+            <p>大好きなサイトさんです。</p>
+            <ul class="link-1">
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+              <li><a href="#" target="_blank"><img src="./img/bn-l.jpg"></a></li>
+            </ul>
+
+            <h3>special thanks</h3>
+            <ul class="link-2">
+              <li><a href="https://cssgradient.io/" target="_blank">CSS Gradient</a></li>
+              <li><a href="https://ics-creative.github.io/project-particle-develop/" target="_blank">Particle Develop</a></li>
+              <li><a href="#" target="_blank">＊＊＊</a></li>
+              <li><a href="#" target="_blank">＊＊＊</a></li>
+            </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contact"> <!-- id="contact"は変えないでください！デザインが崩れます -->
+    <div class="rellax base" data-rellax-speed="0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12" class="center">
+            <h2 class="center">コンタクト</h2>
+            <form method="post" action="ここにアクション" class="mailform">
+              <input type="text" name="message" placeholder="お名前">
+              <input type="mail" name="message" placeholder="メールアドレス">
+              <textarea rows="5" name="message" placeholder="本文"></textarea>
+              <input type="submit" value="Send">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rellax deep fix-160" data-rellax-speed="-4">
+      <div class="right half">
+        <img src="img/fish.png">
+      </div>
+      <div class="left half">
+        <img src="img/fish.png">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 center">
+          <a href="index.html"><span class="sitename">ここにサイト名</span></a>
+          <p>since 2020.</p>
+
+          <p>注意書き、SNSボタンなどをここにおいてもOK。</p>
+
+          <ul class="sns-list">
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-tumblr"></i></a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+          </ul>
+
+          <p class="bottom"><a href="https://do.gt-gt.org" target="_blank">template by do.</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var rellax = new Rellax(' .rellax ', {
+      // 中央寄せ
+      center: true
+    });
+  </script>
+  <script src="js/scrollbooster.min.js" charset="utf-8"></script>
+<script src="js/fuwaimg.js" charset="utf-8"></script>
+</body>
+
+</html>

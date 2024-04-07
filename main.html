@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yusuke　Uda</title>
+    <style>
+        * {
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #161616;
+}
+.menu {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transform: rotate(0deg) translateX(100px);
+  transform-origin: 130px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+.menu.active li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  font-size: 22px;
+  border-radius: 50%;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  transition: 1s;
+  color: transparent;
+  transition-delay: 0.5s;
+  filter: drop-shadow(0 0 2px var(--clr));
+}
+.menu.active a {
+  color: var(--clr);
+}
+.menu a::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--clr);
+  transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
+  transition: width 0.5s, height 0.5s, transform 0.5s;
+  transition-delay: 0.5s, 1s, 1.5s;
+}
+.menu.active a::before {
+  width: 50px;
+  height: 50px;
+  background: #161616;
+  border: 2px solid var(--clr);
+  transform: rotate(calc(0 * var(--i)));
+  transition: transform 0.5s, height 0.5s, width 0.5s;
+  transition-delay: 0.5s, 1.5s, 1.5s;
+  border-radius: 10px;
+  filter: drop-shadow(0 0 5px var(--clr));
+  rotate: 135deg;
+}
+.menu.active li:hover a::before {
+  background: var(--clr);
+}
+.menu.active li:hover a ion-icon {
+  color: #161616;
+}
+
+.menuToggle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 32px;
+  transition: 1.5s;
+}
+.menu.active .menuToggle {
+  transform: rotate(315deg);
+}
+    </style>
+  </head>
+  <body>
+    <ul class="menu">
+        <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
+        <li style="--i: 0; --clr: #a529ff">
+          <a href="https://ip28j7q6ituwyomzwsgdbg.on.drv.tw/%E8%87%AA%E5%88%86%E3%81%AEHP/my%20profile/"><ion-icon name="person-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 1; --clr: #04fc43">
+          <a href="mailto:yuusuke20010927@gmail.com"><ion-icon name="mail-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 2; --clr: #fee800">
+          <a href="tel:080-4241-6645"><ion-icon name="call-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 3; --clr: #01bdab">
+          <a href="https://line.me/ti/p/Kyo7nQ1eeW"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 4; --clr: #fea600">
+          <a href="https://ip28j7q6ituwyomzwsgdbg.on.drv.tw/自分のHP/calendar/スケジュール確認.html"><ion-icon name="calendar-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 5; --clr: #ff2972">
+          <a href="https://ip28j7q6ituwyomzwsgdbg.on.drv.tw/自分のHP/my works/PDFファイル共有.html"><ion-icon name="file-tray-stacked-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 6; --clr: #fe00f1">
+          <a href="https://ip28j7q6ituwyomzwsgdbg.on.drv.tw/自分のHP/book intro/本紹介.html"><ion-icon name="library-outline"></ion-icon></a>
+        </li>
+        <li style="--i: 7; --clr: #00b0fe">
+          <a href="https://www.amazon.jp/hz/wishlist/ls/3TSFFLBQ4XZKK?ref_=wl_share"><ion-icon name="cart-outline"></ion-icon></a>
+        </li>
+      </ul>
+      
+    </ul>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      let menuToggle = document.querySelector(".menuToggle");
+      let menu = document.querySelector(".menu");
+      menuToggle.onclick = function () {
+        menu.classList.toggle("active");
+      };
+    </script>
+  </body>
+</html>
