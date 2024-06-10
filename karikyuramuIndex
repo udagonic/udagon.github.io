@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メインメニュー</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa; /* ライトグレー */
+            color: #000; /* 黒 */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #3f51b5; /* インディゴ */
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #757575; /* グレー */
+            margin-bottom: 30px;
+        }
+
+        .menu-link {
+            text-decoration: none;
+            color: #fff; /* 白 */
+            display: inline-block;
+            margin-bottom: 10px; /* リンク間のスペース */
+            padding: 15px 30px;
+            background-color: #ff4081; /* ピンク */
+            color: #fff; /* 白 */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid #ff4081; /* ピンク */
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .menu-link:hover {
+            background-color: #fff; /* 白 */
+            color: #ff4081; /* ピンク */
+        }
+    </style>
+</head>
+<body>
+    <h1>カリキュラム作成フォーム<br>（作成者：宇田有佑）</h1>
+    <h2>対象の講習を選択してください。</h2>
+    <a href="https://ga85ymgf1hn8ewzqfipwoa.on.drv.tw/%E6%98%A5%E6%9C%9F%E3%82%AB%E3%83%AA%E3%82%AD%E3%83%A5%E3%83%A9%E3%83%A0%E4%BD%9C%E6%88%90/syunki.html" class="menu-link">春期講習</a>
+    <a href="https://ga85ymgf1hn8ewzqfipwoa.on.drv.tw/%E5%A4%8F%E6%9C%9F/kaki.html" class="menu-link">夏期講習</a>
+    <a href="https://ga85ymgf1hn8ewzqfipwoa.on.drv.tw/%E5%86%AC%E6%9C%9F/touki.html" class="menu-link">冬期講習</a>
+    <br><h2>テンプレをコピペだけしたい方はこちら。</h2>
+    <a href="https://ga85ymgf1hn8ewzqfipwoa.on.drv.tw/コピペ用/テンプレコピペ用.html" class="menu-link">コピペ用テンプレート</a>
+</body>
+</html>
+
