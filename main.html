@@ -140,10 +140,10 @@
       <a href="PDFファイル共有.html"><ion-icon name="file-tray-stacked-outline"></ion-icon></a>
     </li>
     <li style="--i: 6; --clr: #fe00f1">
-      <a href="https://www.yamato-u.ac.jp/faculty/education/language/"><img src="yamato-univ-Photoroom.ico" alt="Shopping Cart" class="hidden-icon"></a>
+      <a href="https://www.yamato-u.ac.jp/faculty/education/language/"><img src="yamato-univ-Photoroom.ico" alt="Yamato University" class="hidden-icon"></a>
     </li>
     <li style="--i: 7; --clr: #00b0fe">
-      <a href="https://jll.mukogawa-u.ac.jp/graduate/"><img src="symbol-logo.ico" alt="Shopping Cart" class="hidden-icon"></a>
+      <a href="https://jll.mukogawa-u.ac.jp/graduate/"><img src="symbol-logo.ico" alt="Mukogawa University" class="hidden-icon"></a>
     </li>
   </ul>
 
@@ -157,16 +157,14 @@
   ></script>
   <script>
     let menuToggle = document.querySelector(".menuToggle");
-    let hiddenIcon = document.querySelector(".hidden-icon");
+    let menu = document.querySelector(".menu");
+    let hiddenIcons = document.querySelectorAll(".hidden-icon");
 
     menuToggle.onclick = function () {
-      let menu = document.querySelector(".menu");
       menu.classList.toggle("active");
-      if (menu.classList.contains("active")) {
-        hiddenIcon.style.display = "block";
-      } else {
-        hiddenIcon.style.display = "none";
-      }
+      hiddenIcons.forEach(icon => {
+        icon.style.display = menu.classList.contains("active") ? "block" : "none";
+      });
     };
   </script>
 </body>
