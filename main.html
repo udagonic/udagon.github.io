@@ -1,172 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yusuke Uda</title>
-  <link rel="icon" href="Yusuke-Uda-.ico">
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      background: #161616;
-    }
-    .menu {
-      position: relative;
-      width: 260px;
-      height: 260px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .menu li {
-      position: absolute;
-      left: 0;
-      list-style: none;
-      transform: rotate(0deg) translateX(100px);
-      transform-origin: 130px;
-      transition: 0.5s;
-      transition-delay: calc(0.1s * var(--i));
-    }
-    .menu.active li {
-      transform: rotate(calc(360deg / 8 * var(--i)));
-    }
-    .menu a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      text-decoration: none;
-      font-size: 22px;
-      border-radius: 50%;
-      transform: rotate(calc(360deg / -8 * var(--i)));
-      transition: 1s;
-      color: transparent;
-      transition-delay: 0.5s;
-      filter: drop-shadow(0 0 2px var(--clr));
-    }
-    .menu.active a {
-      color: var(--clr);
-    }
-    .menu a::before {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      border-radius: 2px;
-      background: var(--clr);
-      transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
-      transition: width 0.5s, height 0.5s, transform 0.5s;
-      transition-delay: 0.5s, 1s, 1.5s;
-    }
-    .menu.active a::before {
-      width: 50px;
-      height: 50px;
-      background: #161616;
-      border: 2px solid var(--clr);
-      transform: rotate(calc(0 * var(--i)));
-      transition: transform 0.5s, height 0.5s, width 0.5s;
-      transition-delay: 0.5s, 1.5s, 1.5s;
-      border-radius: 10px;
-      filter: drop-shadow(0 0 5px var(--clr));
-      rotate: 135deg;
-    }
-    .menu.active li:hover a::before {
-      background: var(--clr);
-    }
-    .menu.active li:hover a ion-icon {
-      color: #161616;
-    }
+<html lang="ja"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 
-    .menuToggle {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 32px;
-      transition: 1.5s;
-    }
-    .menu.active .menuToggle {
-      transform: rotate(315deg);
-    }
-    .hidden-icon {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 200;
-      width: 40px; /* 小さめに設定 */
-      height: 40px; /* 小さめに設定 */
-    }
-    .hidden-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* 画像を親要素に合わせて全体表示 */
-    }
-  </style>
-</head>
-<body>
-  <ul class="menu">
-    <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
-    <li style="--i: 0; --clr: #a529ff">
-      <a href="index.html"><ion-icon name="person-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 1; --clr: #04fc43">
-      <a href="mailto:2427605@mwu.jp"><ion-icon name="mail-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 2; --clr: #fee800">
-      <a href="tel:080-8927-8074"><ion-icon name="call-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 3; --clr: #01bdab">
-      <a href="https://line.me/ti/p/D-WPpqqqor"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 4; --clr: #fea600">
-      <a href="スケジュール確認.html"><ion-icon name="calendar-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 5; --clr: #ff2972">
-      <a href="PDFファイル共有.html"><ion-icon name="file-tray-stacked-outline"></ion-icon></a>
-    </li>
-    <li style="--i: 6; --clr: #fe00f1">
-      <a href="https://www.yamato-u.ac.jp/faculty/education/language/"><img src="yamato-univ-Photoroom.ico" alt="Yamato University" class="hidden-icon"></a>
-    </li>
-    <li style="--i: 7; --clr: #00b0fe">
-      <a href="https://jll.mukogawa-u.ac.jp/graduate/"><img src="symbol-logo.ico" alt="Mukogawa University" class="hidden-icon"></a>
-    </li>
-  </ul>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="ja">
+<script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/async-ads.js"></script><script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/gtm_002.js"></script><script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/gtm_004.js"></script><script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/gtm.js"></script><script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/gtm_003.js"></script><script src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/viewport.js"></script><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/jquery.js"></script> 
+<link href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/common.css" rel="stylesheet" type="text/css">
 
-  <script
-    type="module"
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-  ></script>
-  <script
-    nomodule
-    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-  ></script>
-  <script>
-    let menuToggle = document.querySelector(".menuToggle");
-    let menu = document.querySelector(".menu");
-    let hiddenIcons = document.querySelectorAll(".hidden-icon");
 
-    menuToggle.onclick = function () {
-      menu.classList.toggle("active");
-      hiddenIcons.forEach(icon => {
-        icon.style.display = menu.classList.contains("active") ? "block" : "none";
-      });
-    };
-  </script>
-</body>
-</html>
+<script>
+//$(document).ready(function() {
+//  if (document.URL.match("/teachers/")) {
+//    $('body').addClass('body_teachers');
+//  }
+//    if (document.URL.match("/news/")) {
+//    $('body').addClass('body_news');
+//    }
+//    if (document.URL.match("/yamato_times/")) {
+//    $('body').addClass('body_yamato_times');
+//    }
+//});
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/js_002"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-49878979-1');
+</script>
+<!-- //Global site tag (gtag.js) - Google Analytics -->
+
+<!-- Google Tag Manager by DISCO -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M3B6484');</script>
+<!-- End Google Tag Manager by DISCO-->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SX8D2Q');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PHDVP23');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WDZ2D3N');</script>
+<!-- End Google Tag Manager -->
+
+<title>宇田 有佑 | 武庫川女子大学大学大学院</title>
+
+		<!-- All in One SEO 4.1.5.3 -->
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/www.yamato-u.ac.jp\/#website","url":"https:\/\/www.yamato-u.ac.jp\/","name":"\u5927\u548c\u5927\u5b66","description":"\u5927\u962a\u90fd\u5fc3\u90e8\u3059\u3050\u3001\u897f\u5927\u548c\u5b66\u5712\u306e\u7dcf\u5408\u5927\u5b66","inLanguage":"ja","publisher":{"@id":"https:\/\/www.yamato-u.ac.jp\/#organization"}},{"@type":"Organization","@id":"https:\/\/www.yamato-u.ac.jp\/#organization","name":"\u5927\u548c\u5927\u5b66","url":"https:\/\/www.yamato-u.ac.jp\/","sameAs":["https:\/\/twitter.com\/yamatodaigaku","https:\/\/www.instagram.com\/yamato_univ\/","https:\/\/www.youtube.com\/channel\/UCct8si1xwIM-PUDj0CEyiWA"]},{"@type":"BreadcrumbList","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/www.yamato-u.ac.jp\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/www.yamato-u.ac.jp\/","name":"\u30db\u30fc\u30e0","description":"\u5927\u548c\uff08\u3084\u307e\u3068)\u5927\u5b66\u516c\u5f0f\u30b5\u30a4\u30c8\u3002\u5b66\u6821\u6cd5\u4eba\u897f\u5927\u548c\u5b66\u5712\u304c\u5927\u962a\u5e9c\u5439\u7530\u5e02\u306b\u3066\u904b\u55b6\u3059\u308b\u5927\u5b66\u3002\u60c5\u5831\u5b66\u90e8\u3001\u7406\u5de5\u5b66\u90e8\u3001\u653f\u6cbb\u7d4c\u6e08\u5b66\u90e8\u3001\u793e\u4f1a\u5b66\u90e8\u3001\u6559\u80b2\u5b66\u90e8\u3001\u4fdd\u5065\u533b\u7642\u5b66\u90e8\u306e6\u5b66\u90e8\u3092\u64c1\u3057\u3066\u3044\u307e\u3059\u3002","url":"https:\/\/www.yamato-u.ac.jp\/"},"nextItem":"https:\/\/www.yamato-u.ac.jp\/about\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.yamato-u.ac.jp\/about\/#listItem","position":2,"item":{"@type":"WebPage","@id":"https:\/\/www.yamato-u.ac.jp\/about\/","name":"\u5927\u5b66\u306b\u3064\u3044\u3066","description":"\u5927\u548c\u5927\u5b66\u300c\u5927\u5b66\u306b\u3064\u3044\u3066\u300d\u306e\u30da\u30fc\u30b8\u3002\u5b66\u6821\u6cd5\u4eba\u897f\u5927\u548c\u5b66\u5712\u304c\u5927\u962a\u5e9c\u5439\u7530\u5e02\u306b\u3066\u904b\u55b6\u3059\u308b\u5927\u5b66\u3002\u60c5\u5831\u5b66\u90e8\u3001\u7406\u5de5\u5b66\u90e8\u3001\u653f\u6cbb\u7d4c\u6e08\u5b66\u90e8\u3001\u793e\u4f1a\u5b66\u90e8\u3001\u6559\u80b2\u5b66\u90e8\u3001\u4fdd\u5065\u533b\u7642\u5b66\u90e8\u306e6\u5b66\u90e8\u3092\u64c1\u3057\u3066\u3044\u307e\u3059\u3002","url":"https:\/\/www.yamato-u.ac.jp\/about\/"},"nextItem":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/#listItem","previousItem":"https:\/\/www.yamato-u.ac.jp\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/#listItem","position":3,"item":{"@type":"WebPage","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/","name":"\u6559\u54e1\u306e\u7d39\u4ecb","description":"\u5927\u548c\u5927\u5b66\u300c\u6559\u54e1\u306e\u7d39\u4ecb\u300d\u306e\u30da\u30fc\u30b8\u3002\u5b66\u6821\u6cd5\u4eba\u897f\u5927\u548c\u5b66\u5712\u304c\u5927\u962a\u5e9c\u5439\u7530\u5e02\u306b\u3066\u904b\u55b6\u3059\u308b\u5927\u5b66\u3002\u7406\u5de5\u5b66\u90e8\u3001\u653f\u6cbb\u7d4c\u6e08\u5b66\u90e8\u3001\u793e\u4f1a\u5b66\u90e8\u3001\u6559\u80b2\u5b66\u90e8\u3001\u4fdd\u5065\u533b\u7642\u5b66\u90e8\u306e5\u5b66\u90e8\u3092\u64c1\u3057\u3066\u3044\u307e\u3059\u3002","url":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/"},"nextItem":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/#listItem","previousItem":"https:\/\/www.yamato-u.ac.jp\/about\/#listItem"},{"@type":"ListItem","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/#listItem","position":4,"item":{"@type":"WebPage","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/","name":"\u821f\u6a4b \u79c0\u6643","description":"\u5927\u548c\u5927\u5b66\u300c\u821f\u6a4b \u79c0\u6643\u300d\u306e\u30da\u30fc\u30b8\u3002\u5b66\u6821\u6cd5\u4eba\u897f\u5927\u548c\u5b66\u5712\u304c\u5927\u962a\u5e9c\u5439\u7530\u5e02\u306b\u3066\u904b\u55b6\u3059\u308b\u5927\u5b66\u3002\u60c5\u5831\u5b66\u90e8\u3001\u7406\u5de5\u5b66\u90e8\u3001\u653f\u6cbb\u7d4c\u6e08\u5b66\u90e8\u3001\u793e\u4f1a\u5b66\u90e8\u3001\u6559\u80b2\u5b66\u90e8\u3001\u4fdd\u5065\u533b\u7642\u5b66\u90e8\u306e6\u5b66\u90e8\u3092\u64c1\u3057\u3066\u3044\u307e\u3059\u3002","url":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/"},"previousItem":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/#listItem"}]},{"@type":"WebPage","@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/#webpage","url":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/","name":"\u821f\u6a4b \u79c0\u6643 | \u5927\u548c\u5927\u5b66","description":"\u5927\u548c\u5927\u5b66\u300c\u821f\u6a4b \u79c0\u6643\u300d\u306e\u30da\u30fc\u30b8\u3002\u5b66\u6821\u6cd5\u4eba\u897f\u5927\u548c\u5b66\u5712\u304c\u5927\u962a\u5e9c\u5439\u7530\u5e02\u306b\u3066\u904b\u55b6\u3059\u308b\u5927\u5b66\u3002\u60c5\u5831\u5b66\u90e8\u3001\u7406\u5de5\u5b66\u90e8\u3001\u653f\u6cbb\u7d4c\u6e08\u5b66\u90e8\u3001\u793e\u4f1a\u5b66\u90e8\u3001\u6559\u80b2\u5b66\u90e8\u3001\u4fdd\u5065\u533b\u7642\u5b66\u90e8\u306e6\u5b66\u90e8\u3092\u64c1\u3057\u3066\u3044\u307e\u3059\u3002","inLanguage":"ja","isPartOf":{"@id":"https:\/\/www.yamato-u.ac.jp\/#website"},"breadcrumb":{"@id":"https:\/\/www.yamato-u.ac.jp\/about\/teachers\/p038\/#breadcrumblist"},"datePublished":"2022-02-28T05:12:54+09:00","dateModified":"2022-02-28T05:12:54+09:00"}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="大和大学 » フィード" href="https://www.yamato-u.ac.jp/feed/">
+<link rel="alternate" type="application/rss+xml" title="大和大学 » コメントフィード" href="https://www.yamato-u.ac.jp/comments/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.yamato-u.ac.jp\/wp\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.12"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/wp-emoji-release.min.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-theme-css" href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/theme.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="nishiyamato-style-css" href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/style.css" type="text/css" media="all">
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/html5shiv.js" id="nishiyamato-html5-js"></script>
+<link rel="https://api.w.org/" href="https://www.yamato-u.ac.jp/wp-json/"><link rel="alternate" type="application/json" href="https://www.yamato-u.ac.jp/wp-json/wp/v2/pages/1783"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.yamato-u.ac.jp/wp/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.yamato-u.ac.jp/wp/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7.12">
+<link rel="shortlink" href="https://www.yamato-u.ac.jp/?p=1783">
+<link rel="alternate" type="application/json+oembed" href="https://www.yamato-u.ac.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yamato-u.ac.jp%2Fabout%2Fteachers%2Fp038%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.yamato-u.ac.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.yamato-u.ac.jp%2Fabout%2Fteachers%2Fp038%2F&amp;format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><script src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/cse_element__ja.js" type="text/javascript"></script><link type="text/css" href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/default+ja.css" rel="stylesheet"><link type="text/css" href="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/default.css" rel="stylesheet"><style type="text/css">.gsc-control-cse{font-family:arial, sans-serif}.gsc-control-cse .gsc-table-result{font-family:arial, sans-serif}.gsc-refinementsGradient{background:linear-gradient(to left,rgba(255,255,255,1),rgba(255,255,255,0))}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-moz-user-select:none;white-space:nowrap}.gsst_e{vertical-align:middle;opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-moz-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gssb_a{padding:0 9px}.gsib_a{padding:5px 9px 4px 9px}.gscb_a{line-height:27px}.gssb_e{border:0}.gssb_l{margin:5px 0}input.gsc-input::-webkit-input-placeholder{font-size:14px}input.gsc-input:-moz-placeholder{font-size:14px}input.gsc-input::-moz-placeholder{font-size:14px}input.gsc-input:-ms-input-placeholder{font-size:14px}input.gsc-input:focus::-webkit-input-placeholder{color:transparent}input.gsc-input:focus:-moz-placeholder{color:transparent}input.gsc-input:focus::-moz-placeholder{color:transparent}input.gsc-input:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style></head>
+
+<body class="page-template-default page page-id-1783 page-child parent-pageid-548 p038 body_teachers">
+<!-- Google Tag Manager by DISCO(noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3B6484"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager by DISCO(noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SX8D2Q"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHDVP23"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WDZ2D3N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<main class="main">
+
+
+  
+    <div class="pageHead">
+        <div class="pageHead__mv">
+            <div class="pageHead__mv__bg re_bg" style="background-image: url('IMG_3690.jpg'); opacity: 1; transform: scale(1);"></div>
+
+            
+
+<!--            <div class="pageHead__person"><img src="/assets/images/about/teachers/p038/t.jpg" alt=""/></div>-->
+        </div>
+        <div class="pageHead__main">
+            <div class="pageHead__ttlEn fontEn"><span class="p_color1">M</span><span class="p_color2">aster's Student</span> </div>
+            <div class="pageHead__ttl" id="sec01">
+                <div class="pageHead__ttl__line -left" style="opacity: 1; transform: translateX(0%);"></div>
+                <h1 class="pageHead__ttl__main ">
+                    <div class="pageHead__ttl__ic -left" style="opacity: 1; left: 0%;"></div>
+                    <div class="pageHead__ttl__main__sub" style="opacity: 1;">
+                        <div>自己紹介</div>
+                    </div>
+                    <div class="pageHead__ttl__main__txt txtAnime2__txt"><span class="1" style="opacity: 1; transform: scale(1) translateX(0px) translateZ(0px);">宇</span><span class="2" style="opacity: 1; transform: scale(1) translateX(0px) translateZ(0px);">田</span> <span class="3" style="opacity: 1; transform: scale(1) translateX(0px) translateZ(0px);">有</span><span class="4" style="opacity: 1; transform: scale(1) translateX(0px) translateZ(0px);">佑</span></div>
+                    <div class="pageHead__ttl__ic -right" style="opacity: 1; right: 0%;"></div>
+                </h1>
+                <div class="pageHead__ttl__line -right" style="opacity: 1; transform: translateX(0%);"></div>
+            </div>
+        </div>
+    </div>
+    <div class="pageContent">
+        <section class="l_section l_section--np" id="sec02">
+            <div class="l_container">
+                <div class="">
+                    <div class="p_colum">
+                        <table width="100%" class="p_table p_table--sp1 teachersData">
+                            <tbody>
+                                <tr>
+                                    <th>氏名</th>
+                                    <td>宇田 有佑(うだ・ゆうすけ)</td>
+                                </tr>
+                                <tr>
+                                    <th>課程</th>
+                                    <td>修士（1年）</td>
+                                </tr>
+                                <tr>
+                                    <th>研究科</th>
+                                    <td>文学研究科</td>
+                                </tr>
+                                <tr>
+                                    <th>学科・専攻</th>
+                                    <td>日本語日本文学専攻</td>
+                                </tr>
+                                <tr>
+                                    <th>専門・研究<br>分野</th>
+                                    <td>国語教育学(主には意見文作文学習指導論など)・近代国文学<br>
+                                        <ul>
+                                        <li>VUCA時代を生き抜く力を備えた市民を育てるために、情報を集め、整理し、自分なりの考えを持ち、発信し、議論する力は不可欠です。そして、それらは全てことばによって行われ、その力を育てるのも国語科の役割の一つです。これを実現するための具体的方略を探るのが、国語教育学分野における現在の自身の研究テーマです。<br> </li>
+                                        <li>一方で、国語科では小中高の全ての校種で文学作品を教材として扱います。中でも特に高等学校段階において近代文学を学習するその意義や目的、そしてその目標を達成するのに適した手法を近代文学研究では模索しています。<br> </li>
+                                        <li>兵庫県立高等学校で非常勤講師をしています。 </li>
+                                    </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>研究キーワード</th>
+                                    <td>近代国文学，読書行為，「檸檬」，意見文作文，議論，クリティカル・シンキング，批判的思考，論理的思考，レトリック</td>
+                                </tr>
+                                <tr>
+                                    <th>非常勤先担当科目</th>
+                                    <td>古典探究（第三学年）</td>
+                                </tr>
+                                <tr>
+                                    <th>学位</th>
+                                    <td>学士(教育学)(卒業論文：意見文作文指導の在り方研究～蓋然性推論における真理を求める技術を育てる授業作り～ )</td>
+                                </tr>
+                                <tr>
+                                    <th>実務経験</th>
+                                    <td>
+                                        <ul>
+                                        <li>高校講師</li>
+                                            <li>教員免許状保有：中1種(国語)，高１種(国語)</li>
+                                        </ul></td>
+                                </tr>
+                                <tr>
+                                    <th>現在の研究内容・課題</th>
+                                    <td>議論の技術を子どもに身に付けさせるための学習活動のあり方や、カリキュラムの系統性。
+                                        その他，次の課題にも特に関心があります。<br><br>
+                                        <ul>
+                                            <li>高等学校で近代国文学を指導する意義や目的並びにそれらに準じた指導方法。<br></li>
+                                            <li>デジタルシティズンシップ教育その他ICT教育と国語科教育との関連指導のあり方。<br></li>
+                                        </ul></td>
+                                </tr>
+                                <tr>
+                                    <th>主な所属学会</th>
+                                    <td>
+                                        <ul>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--
+                    <div class="p_box p_colum">
+                        <div class="l_col l_col--c2-1 l_col--mb_s l_col--center">
+                            <div class="u_txC"><img src="/assets/images/about/teachers/p031/img.jpg" width="100%"  alt=""/>
+                            <p>1910年代日本人建築家による中国・旅順の都市計画案</p></div>
+                        </div>
+                    </div>
+-->
+                    <div class="u_txC"><a href="javascript:history.back();" class="p_btn p_btn--back">戻る</a></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+</main>
+
+
+
+<footer class="footer">
+    <a href="#top" class="pagetop" style="display: none;"><span></span></a>
+<!--
+    <div class="footer__cv">
+        <div class="footer__cv__inner l_container">
+            <div class="footer__cv__item scrollin">
+                <div class="footer__cv__ttlSub"><img src="/assets/images/footer_en1.svg" alt="Document request!"/></div>
+                <div class="footer__cv__ttl">資料請求/お問合せ</div>
+                <p>学校パンフレットを送付します</p>
+                <a href="/inquiry/" class="p_btn">申し込みはこちら</a> </div>
+            <div class="footer__cv__item -type2 scrollin __delay">
+                <div class="footer__cv__ttlSub"><img src="/assets/images/footer_en2.svg" alt="Open Campus"/></div>
+                <div class="footer__cv__ttl -type2">入学/イベント</div>
+                <p>入学に向けたイベントに参加しよう</p>
+                <a href="/admissions/" class="p_btn p_btn--2">詳細はこちら</a> </div>
+        </div>
+    </div>
+-->
+   
+    
+<div class="header__bg2"></div>
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/anime.min.js"></script> 
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/modaal.min.js"></script> 
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/slick.min.js"></script> 
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/common.js"></script>
+
+<!-- wp pligin [VK Link Target Controller]-->
+<script type="text/javascript" id="vk-ltc-js-js-extra">
+/* <![CDATA[ */
+var vkLtc = {"ajaxurl":"\/\/www.yamato-u.ac.jp\/wp\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/script.min.js" id="vk-ltc-js-js"></script>
+<!-- //wp pligin [VK Link Target Controller]-->
+
+<!-- Global site tag (gtag.js) - Google Ads: 647234011 -->
+<script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-647234011');
+</script>
+<!-- //Global site tag (gtag.js) - Google Ads: 647234011 -->
+
+<!-- Yahoo!サイトジェネラルタグ -->
+<script async="" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/ytag.js"></script>
+<script>
+window.yjDataLayer = window.yjDataLayer || [];
+function ytag() { yjDataLayer.push(arguments); }
+ytag({"type":"ycl_cookie","config":{"ycl_use_non_cookie_storage":true}});
+</script>
+<!-- //Yahoo!サイトジェネラルタグ -->
+
+<!-- Yahoo! RLSAタグ -->
+<script async="">
+ytag({
+  "type":"yss_retargeting",
+  "config": {
+    "yahoo_ss_retargeting_id": "1001125263",
+    "yahoo_sstag_custom_params": {
+    }
+  }
+});
+</script>
+<!-- //Yahoo! RLSAタグ -->
+
+<!-- YDNリタゲタグ -->
+<script async="">
+ytag({
+  "type":"yjad_retargeting",
+  "config":{
+    "yahoo_retargeting_id": "2RU5N3RK93",
+    "yahoo_retargeting_label": "",
+    "yahoo_retargeting_page_type": "",
+    "yahoo_retargeting_items":[
+      {item_id: '', category_id: '', price: '', quantity: ''}
+    ]
+  }
+});
+</script>
+<!-- //YDNリタゲタグ -->
+<script type="text/javascript" src="%E8%88%9F%E6%A9%8B%20%E7%A7%80%E6%99%83%20_%20%E5%A4%A7%E5%92%8C%E5%A4%A7%E5%AD%A6_files/wp-embed.min.js" id="wp-embed-js"></script>
+
+<deepl-input-controller></deepl-input-controller><table cellspacing="0" cellpadding="0" style="width: 2px; display: none; top: 3px; left: -1px; position: absolute;" role="presentation" class="gstl_50 gssb_c"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table></body></html>
